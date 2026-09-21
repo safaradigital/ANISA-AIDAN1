@@ -409,6 +409,51 @@ button,input,select,textarea{font:inherit}
  .gallery-grid{grid-template-columns:1fr 1fr;gap:9px}.gallery-item img,.gallery-item:nth-child(2) img,.gallery-item:nth-child(5) img{height:260px}
  .flora svg{width:175px;height:175px}
 }
+
+/* BANK BNI */
+.bank-section{background:linear-gradient(180deg,#f8fcff,#edf7fd)}
+.bank-wrap{max-width:760px;margin:42px auto 0}
+.bank-card{
+  position:relative;overflow:hidden;
+  background:rgba(255,255,255,.94);
+  border:1px solid var(--line);
+  border-radius:30px;
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+.bank-card:before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 90% 10%,rgba(244,124,32,.10),transparent 35%);
+}
+.bank-gif{
+  width:130px;height:78px;object-fit:contain;margin:0 auto 18px;
+  border-radius:18px;background:#fff;
+  box-shadow:0 10px 28px rgba(39,69,99,.10);
+}
+.bank-name{font-family:"Cormorant Garamond";font-size:38px;color:var(--ink);margin-bottom:6px}
+.bank-owner{font-size:14px;color:#718394;margin-bottom:22px}
+.bank-number{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:16px 18px;border:1px dashed rgba(63,100,133,.25);
+  border-radius:18px;background:#f8fcff;text-align:left;
+}
+.bank-number small{display:block;font-size:9px;letter-spacing:2px;color:var(--gold);margin-bottom:5px}
+.bank-number strong{font-size:18px;letter-spacing:2px;color:var(--ink)}
+.copy-bank{
+  flex:0 0 auto;border:0;border-radius:999px;padding:10px 16px;
+  background:var(--ink);color:#fff;cursor:pointer;transition:.25s;
+}
+.copy-bank:hover{transform:translateY(-2px)}
+.bank-note{margin-top:15px;font-size:11px;line-height:1.7;color:#8a99a6}
+.copy-success{display:none;margin-top:10px;font-size:11px;color:#5f8b68}
+@media(max-width:520px){
+  .bank-card{padding:22px 16px}
+  .bank-name{font-size:33px}
+  .bank-number{align-items:flex-start}
+  .bank-number strong{font-size:15px}
+  .copy-bank{padding:9px 12px;font-size:11px}
+}
+
 </style>
 </head>
 
@@ -563,6 +608,37 @@ button,input,select,textarea{font:inherit}
  </div>
 </section>
 
+
+<!-- BANK BNI -->
+<section class="section bank-section" id="bank">
+ <div class="container center">
+  <div class="kicker">Wedding Gift</div>
+  <div class="title">Kirim Hadiah</div>
+  <p style="margin-top:14px;color:#718394;line-height:1.8">
+   Bagi Bapak/Ibu/Saudara/i yang ingin memberikan tanda kasih secara digital,
+   dapat melalui rekening berikut.
+  </p>
+  <div class="bank-wrap">
+   <div class="bank-card reveal">
+    <img class="bank-gif" src="data:image/gif;base64,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" alt="BNI">
+    <div class="bank-name">Bank BNI</div>
+    <div class="bank-owner">a.n. <b>Ihda Anisa Ulfa</b></div>
+    <div class="bank-number">
+      <div>
+       <small>NOMOR REKENING</small>
+       <strong id="bankAccount">ISI NOMOR REKENING</strong>
+      </div>
+      <button class="copy-bank" onclick="copyBankAccount()">Salin</button>
+    </div>
+    <div class="copy-success" id="copySuccess">Nomor rekening berhasil disalin ✦</div>
+    <div class="bank-note">
+      Silakan ganti tulisan <b>ISI NOMOR REKENING</b> pada kode dengan nomor rekening BNI yang sebenarnya.
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
 <!-- RSVP -->
 <section class="section rsvp" id="rsvp">
  <div class="container center"><div class="kicker">RSVP</div><div class="title">Konfirmasi Kehadiran</div><p style="margin-top:14px;color:#718394">Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
@@ -614,6 +690,7 @@ button,input,select,textarea{font:inherit}
  <a href="#event"><b>✦</b>Resepsi</a>
  <a href="#location"><b>⌖</b>Lokasi</a>
  <a href="#gallery"><b>▧</b>Galeri</a>
+ <a href="#bank"><b>▤</b>Gift</a>
  <a href="#rsvp"><b>✉</b>RSVP</a>
 </nav>
 
@@ -697,6 +774,29 @@ if(savedGuest) guestNameInput.value = savedGuest;
 tick();setInterval(tick,1000);
 function view(src){document.getElementById("lightImg").src=src;document.getElementById("lightbox").classList.add("show")}
 function closeLightbox(){document.getElementById("lightbox").classList.remove("show")}
+
+function copyBankAccount(){
+ const el=document.getElementById("bankAccount");
+ const success=document.getElementById("copySuccess");
+ if(!el || !success) return;
+ const value=el.textContent.trim();
+ if(value==="ISI NOMOR REKENING") {
+   success.style.display="block";
+   success.textContent="Silakan isi nomor rekening terlebih dahulu.";
+   setTimeout(()=>success.style.display="none",2200);
+   return;
+ }
+ navigator.clipboard.writeText(value).then(()=>{
+   success.style.display="block";
+   success.textContent="Nomor rekening berhasil disalin ✦";
+   setTimeout(()=>success.style.display="none",2200);
+ }).catch(()=>{
+   success.style.display="block";
+   success.textContent="Gagal menyalin. Silakan salin secara manual.";
+   setTimeout(()=>success.style.display="none",2200);
+ });
+}
+
 function rsvp(e){e.preventDefault();document.getElementById("note").style.display="block";e.target.reset()}
 let playing=false;
 let musicWanted=true;
